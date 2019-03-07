@@ -1,0 +1,136 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Predatech Kulgram.md</title><style></style></head><body id="preview">
+<p><a href="http://predatech.uin-suska.ac.id"><img src="http://predatech.uin-suska.ac.id/wp-content/uploads/2018/01/Header-Web-barulah.jpg" alt="N|Solid"></a></p>
+<h1><a id="Predatech_KulGram_1"></a>Predatech KulGram</h1>
+<p>Predatech KulGram adalah kegiatan belajar dengan memanfaatkan media aplikasi telegram sebagai kelas. Kegiatan ini di taja oleh alumni predatech untuk seluruh anggota predatech yang ingin dan memiliki minat belajar. Kegiatan dilakukan setiap Jumat malam atau Malam Ahad dengan pemateri yang berbeda atau sama pada setiap malam. Materi yang di sampaikan adalah Membangun Aplikasi Web Pada Tingkat Menengah, berikut daftar materi yang ada pada kulgram</p>
+<ul>
+<li>Mendesain Web Menggunakan Bootstrap 4</li>
+<li>Merancang Database MySQL</li>
+<li>Pengenalan OOP dan Penerapan MVC</li>
+<li>Membuat API Menggunaakan PHP</li>
+<li>Membuat API Menggunakan Node JS</li>
+<li>Membuat Sistem Realtime</li>
+</ul>
+<h5><a id="Fitur_dari_Materi_11"></a>Fitur dari Materi</h5>
+<ul>
+<li>Installasi Web Server</li>
+<li>Konfigurasi Library Bootstrap 4</li>
+<li>Mendesain Tampilan Web</li>
+<li>Mendesain Database</li>
+<li>Installasi Composer</li>
+<li>Installasi PHP</li>
+<li>Pengenalan OOP</li>
+<li>Class dan Object</li>
+<li>Menginstal Library ORM</li>
+<li>Membuat Aplikasi MVC</li>
+<li>JSON dan Array</li>
+<li>Membuat API menggunakan PHP</li>
+<li>Installasi dan  Konfigurasi Node JS</li>
+<li>Membuat API Sederhana menggunakan Javascript</li>
+</ul>
+<h4><a id="1_Mendesain_Web_Menggunakan_Bootstrap_4_28"></a>1. Mendesain Web Menggunakan Bootstrap 4</h4>
+<h4><a id="2_Merancang_Database_MySQL_29"></a>2. Merancang Database MySQL</h4>
+<h4><a id="3_Pengenalan_OOP_dan_MVC_pada_PHP_30"></a>3. Pengenalan OOP dan MVC pada PHP</h4>
+<p>Object Oriented Programming (OOP) adalah metode pemrograman yang menekankan pengkodingan dengan memperhatikan objek dari suatu case secara real. Sebagai contoh adalah pesawat, dimana pesawat adalah objek. Namun di dalam pesawat ada beberapa objek lain seperti kursi dan mesin. Dalam OOP, objek-objek kecil ini disebut fungsi yang akan di hubungkan satu dengan yang lain sehingga dapat bekerja secara bersama. Kenapa harus menggunakan konsep OOP? Ada beberapa alasan yang sangat dasar yaitu agar kita tidak menulis ulang kode yang sama dan penggunaan library yang sudah ada daripada harus membuat library sendiri.</p>
+<p>OOP biasanya identik dengan <code>Class</code> dan <code>function</code>, bahkan saat ini penggunaan oop tidak lagi menggunakan fungsi <code>required</code> atau <code>include</code> untuk memanggil file yang memiliki <code>method</code> di dalamnya. Biasanya seluruh class di masukan dalam file lain yang biasa kita sebut <code>autoloader</code>. Jika ingin menggunakan class ini, maka kita cukup menggunakan tag <code>use</code>.</p>
+<p>Dalam KulGram kita tidak akan banyak menggunakan tag-tag atau fitur-fitur yang masih asing di telinga. Kita akan berfokus pada penggunaan <code>Class</code> dan <code>function</code>. <code>Class</code> adalah kerangka dasar yang akan menyimpan beberapa fungsi dan property. <code>Function</code> atau biasa kita sebut dengan method adalah block yang digunakan untuk menyimpan beberapa instruksi.<code>Property</code> adalah variabel yang bisa digunakan secara terus menerus didalam <code>Class</code> terutama didalam <code>function</code>. Semua yang di jelaskan akan dicontohkan pada kasus.</p>
+<ol>
+<li>Install Composer<br>
+Composer adalah tools yang dapat kita gunakan untuk mendownload library php yang tersedia di internet. Composer memudahkan kita dalam penggabungan semua library dengan penggunaan <code>autoload</code>. Silahkan download composer dari <a href="https://getcomposer.org/download/">sini</a>, kemudian install seperti biasa. Ketika proses install akan ada step untuk meminta folder PHP yang digunakan, coba cari folder php yang ada di wamp dengan alamat directory : C:/wampp64/bin/php/php7.2.10 .Jika setelah di next masih ada error, maka download PHP secara terpisah dari <a href="https://windows.php.net/downloads/releases/php-7.2.15-nts-Win32-VC15-x64.zip">link ini</a>. Extrak di dalam drive C, dan coba install kembali composer. Setelah mengulangi untuk menginstall, biasanya composer akan auto detect folder PHP tersebut dan proses install akan selesai.</li>
+<li>Install Library Query Builder<br>
+Salah satu kenapa kita harus menggunakan OOP adalah banyaknya library yang dapat mendukung kinerja kita dalam membangun aplikasi. Salah satunya adalah menggunakan library Query Builder. Jika membangun aplikasi skala menengah dan tidak menggunakan framework kita bisa menggunakan query builder <a href="https://github.com/skipperbent/pecee-pixie">pecee-pixie</a>. Buka folder project kulgram sebelumnya, kemudian buatlah file <code>composer.json</code>. Di dalam file <code>composer.json</code> tambahkan baris kode berikut dan save:<pre><code class="language-sh">{
+    <span class="hljs-string">"require"</span>: {
+        <span class="hljs-string">"pecee/pixie"</span>: <span class="hljs-string">"*"</span>
+    }
+}
+</code></pre>
+Kemudian bukalah terminal pada folder project, dengan cara tekan dan tahan SHIFT dan klik kanan pada mouse, pilih <code>Open PowerSheel ...</code> atau <code>Open Terminal ..</code>. Ketikan <code>composer install</code> pada terminal, tunggu hingga proses installing berhasil. Jika ada kegagalan coba dengan <code>composer update</code>, namun ini berlaku jika errornya pada masalah penginstallan. Jika masih ada error coba dengan <code>php composer install</code>.<br>
+Setelah terinstal akan ada folder baru dengan nama folder adalah <code>vendor</code>, didalam nya ada juga subfolder <code>composer</code>. Didalam sub folder <code>composer</code> seluruh <code>Class</code> pada library di representasikan secara sederhana agar mudah di gunakan.</li>
+<li>Membuat Struktur Folder MVC<br>
+Buatlah folder baru dengan nama <code>models</code>, <code>views</code>, <code>controllers</code>, dan <code>config</code>. Masing-masing folder memiliki fungsinya masing-masing. Folder <code>Models</code> digunakan untuk menyimpan <code>class</code> yang berisi sintak dan query penghubung antara koding dan database. Folder <code>Views</code> digunakan untuk menyimpan seluruh tampilan yang akan di render pada web, biasanya adalah hasil dari query database dan user interface dari aplikasi. Folder <code>Controllers</code> digunakan untuk menyimpan <code>Class</code> penghubung antara hasil dari <code>Model</code> dan <code>View</code> yang akan di tampilkan. Folder <code>config</code> berguna untuk meyimpan file konfigurasi database atau konfigurasi lain.</li>
+<li>Membuat File Konfigurasi<br>
+Tambahkan file baru dengan nama <code>mysql.php</code> di dalam folder config, ketikan kode program berikut di dalamnya.<pre><code class="language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">"vendor/autoload.php"</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mysql</span>  </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">connection</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$config</span> = [
+            <span class="hljs-string">'driver'</span>    =&gt; <span class="hljs-string">'mysql'</span>,
+            <span class="hljs-string">'host'</span>      =&gt; <span class="hljs-string">'localhost'</span>, <span class="hljs-comment">//isi dengan host</span>
+            <span class="hljs-string">'database'</span>  =&gt; <span class="hljs-string">'db_inventory'</span>, <span class="hljs-comment">// isi dengan nama database</span>
+            <span class="hljs-string">'username'</span>  =&gt; <span class="hljs-string">'root'</span>, <span class="hljs-comment">//isi dengan user database</span>
+            <span class="hljs-string">'password'</span>  =&gt; <span class="hljs-string">''</span>, <span class="hljs-comment">//isi dengan password database</span>
+            <span class="hljs-string">'charset'</span>   =&gt; <span class="hljs-string">'utf8'</span>,
+            <span class="hljs-string">'collation'</span> =&gt; <span class="hljs-string">'utf8_unicode_ci'</span>,
+            <span class="hljs-string">'prefix'</span>    =&gt; <span class="hljs-string">''</span>,
+        ];
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-variable">$conn</span> = <span class="hljs-keyword">new</span> \Pecee\Pixie\Connection(<span class="hljs-string">'mysql'</span>, <span class="hljs-variable">$config</span>);
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$conn</span>-&gt;getQueryBuilder();
+        } <span class="hljs-keyword">catch</span> (PDOException <span class="hljs-variable">$e</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$e</span>-&gt;getMessage();
+        }
+    }
+}
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+</li>
+<li>Membuat File Render Page<br>
+File ini berisi kode program untuk merender file view, buat file baru di dalam folder project kulgram (setara dengan <code>index.php</code>) dengan nama <code>load.php</code>. Kemudian ketikan kode program berikut di dalamnya.<pre><code class="language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Load</span>
+</span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">view</span> <span class="hljs-params">(<span class="hljs-variable">$url</span>, <span class="hljs-variable">$data</span> = null)</span>
+    </span>{
+        <span class="hljs-variable">$explode</span> = explode(<span class="hljs-string">'/'</span>,<span class="hljs-variable">$url</span>);
+        <span class="hljs-variable">$folder</span> = <span class="hljs-variable">$explode</span>[<span class="hljs-number">0</span>];
+        <span class="hljs-variable">$file</span> = <span class="hljs-variable">$explode</span>[<span class="hljs-number">1</span>];
+        <span class="hljs-keyword">if</span> (is_array(<span class="hljs-variable">$data</span>)) {
+            extract(<span class="hljs-variable">$data</span>);     
+        }
+        <span class="hljs-variable">$dir</span> = <span class="hljs-string">'views/'</span>.<span class="hljs-variable">$folder</span>;
+        <span class="hljs-keyword">if</span>(is_dir(<span class="hljs-variable">$dir</span>)){
+            <span class="hljs-keyword">include_once</span> <span class="hljs-variable">$dir</span>.<span class="hljs-string">'/'</span>.<span class="hljs-variable">$file</span>.<span class="hljs-string">'.php'</span>;
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">include_once</span> <span class="hljs-string">'404.php'</span>;
+        }
+    }
+}
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+</li>
+<li>Templating<br>
+Kita akan coba menggabungkan template yang pernah kita dibuat sebelumnya, buka file index.html kemudian copy kode dari line 1 hingga &lt;/nav&gt; yang terdapat diatas tag &lt;div class=“container-fluid”&gt;, paste di file index.php pada line 1, jangan lupa untuk meng-enter agar ter-paste di atas kode &lt;?php. Setelah itu pada kode ?&gt;, tepatnya di bawah enter 1 line dan tambahkan kode penutup masing-masing tag yaitu &lt;/body&gt; dan &lt;/html&gt;. Selanjutnya copy 4 baris kode html dimulai dari &lt;div class=“container-fluid”&gt; sampai baris ke-4, dan paste di atas tag &lt;?php. Dibawah tag ?&gt; tambhakan penutup &lt;/div&gt;,&lt;/main&gt;,&lt;/div&gt; dan &lt;/div&gt; secara berurutan dari atas. Jangan lupa untuk copy paste javascript yang ada pada file index.html ke file index.php. posisi kode sama dengan posisi pada index.html</li>
+<li>Ubah Menu Navigasi<br>
+Ubah menu navigasi terlebih dahulu sama persis dengan project yang akan dibuat. Secara urutan adalah</li>
+<li>s</li>
+</ol>
+<h4><a id="Daftar_Pemateri_110"></a>Daftar Pemateri</h4>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Pemateri</th>
+<th>Profile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hady Eka Saputra, S.Kom</td>
+<td>[…][PlDb]</td>
+</tr>
+<tr>
+<td>Aszani, S.Kom</td>
+<td>[…][PlGh]</td>
+</tr>
+<tr>
+<td>?</td>
+<td>[…][PlGd]</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="Development_117"></a>Development</h3>
+<p>Want to contribute? Great!</p>
+<blockquote>
+<p>Ilmu merupakan investasi dunia yang berharga<br>
+Kalau menunggu yang dibelakang, kapan mau maju?</p>
+</blockquote>
+
+</body></html>
