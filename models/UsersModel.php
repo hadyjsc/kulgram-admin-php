@@ -20,6 +20,15 @@ class UsersModel extends Mysql
         return $results;
     }
 
+    public function getOne($data)
+    {
+        $results = $this->db
+                    ->table($this->table)
+                    ->where('id', '=', $data['id'])
+                    ->get();
+        return $results;
+    }
+
     public function insert($data)
     {
         $insert = $this->db

@@ -35,8 +35,8 @@ class UsersController
     public function detail($id)
     {
         $data = new UsersModel();
-        $results = $data->getOne();
-        return $this->loadView->view('user/detail');
+        $results = $data->getOne(['id'=>$id]);
+        return $this->loadView->view('user/detail',$results);
     }
 
 
