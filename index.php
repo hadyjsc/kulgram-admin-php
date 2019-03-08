@@ -1,4 +1,5 @@
 <?php
+ob_start();
 ini_set('display_errors', 1);
 $pages = $_GET['page'];
 if (empty($pages)) {

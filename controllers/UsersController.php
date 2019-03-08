@@ -18,7 +18,7 @@ class UsersController
     public function create()
     {
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $data = new UserModel();
+            $data = new UsersModel();
             $results = $data->insert([
                 'fname' => $_POST['fname'],
                 'uname' => $_POST['uname'],
@@ -27,10 +27,18 @@ class UsersController
                 'status' => $_POST['status'],
                 'createdAt' => date('Y-m-d H:i:s'),
             ]);
-            return header('location:index.php?page=user/view/'.$results);
+            return header('Location: index.php?page=users/detail/'.$results);
         }
         return $this->loadView->view('user/create');
     }
+
+    public function detail($id)
+    {
+        $data = new UsersModel();
+        $results = $data->getOne();
+        return $this->loadView->view('user/detail');
+    }
+
 
 }
 
