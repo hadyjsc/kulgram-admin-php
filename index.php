@@ -5,8 +5,8 @@ $pages = $_GET['page'];
 if (empty($pages)) {
     header('location:index.php?page=web/index');
 }
+$script     = "";
 $explode    = explode('/', $pages);
-
 $controller = $explode[0];
 $action     = $explode[1];
 $id         = (isset($explode[2])) ? $explode[2] : '' ;
@@ -22,12 +22,13 @@ $id         = (isset($explode[2])) ? $explode[2] : '' ;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="app sidebar-mini rtl">
     <!-- Navbar-->
-    <header class="app-header"><a class="app-header__logo" href="index.html">Predatech Kulgram</a>
+    <header class="app-header"><a class="app-header__logo" href="">Predatech Kulgram</a>
       <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
@@ -98,6 +99,24 @@ $id         = (isset($explode[2])) ? $explode[2] : '' ;
       </ul>
     </aside>
     <main class="app-content">
+      <div class="app-title">
+        <div>
+          <h1><i class="fa fa-dashboard"></i> <?= ucwords($controller) ?></h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item">
+            <i class="fa fa-home fa-lg"></i>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="index.php?page=<?= $controller ?>/index"><?= ucwords($controller) ?></a>
+          </li>
+          <?php if ($action): ?>
+          <li class="breadcrumb-item">
+            <a href="index.php?page=<?= $controller ?>/<?= $action ?>/<?= $id ?>"><?= ucwords($action) ?></a>
+          </li>
+          <?php endif ?>
+        </ul>
+      </div>
       <?php
         require 'load.php';
         require 'controllers/'.ucwords($controller).'Controller.php';
@@ -122,6 +141,24 @@ $id         = (isset($explode[2])) ? $explode[2] : '' ;
     <script src="assets/js/plugins/pace.min.js"></script>
     <!-- Page specific javascripts-->
     <script type="text/javascript" src="assets/js/plugins/chart.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/jquery.validation.js"></script>
+    <script type="text/javascript">
+      $('#table-user').DataTable();
+
+      $('#form').validate({
+        submit: {
+          settings: {
+            inputContainer: '.form-group',
+            scrollToError: {
+                offset: -100,
+                duration: 500
+            }
+          }
+        }
+      });
+    </script>
     <script type="text/javascript">
       var data = {
       	labels: ["January", "February", "March", "April", "May"],
@@ -168,17 +205,6 @@ $id         = (isset($explode[2])) ? $explode[2] : '' ;
       
       var ctxp = $("#pieChartDemo").get(0).getContext("2d");
       var pieChart = new Chart(ctxp).Pie(pdata);
-    </script>
-    <!-- Google analytics script-->
-    <script type="text/javascript">
-      if(document.location.hostname == 'pratikborsadiya.in') {
-      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      	ga('create', 'UA-72504830-1', 'auto');
-      	ga('send', 'pageview');
-      }
     </script>
   </body>
 </html>

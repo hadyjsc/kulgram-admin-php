@@ -17,6 +17,7 @@ class UsersModel extends Mysql
         $results = $this->db
                     ->table($this->table)
                     ->get();
+
         return $results;
     }
 
@@ -35,5 +36,23 @@ class UsersModel extends Mysql
                 ->table($this->table)
                 ->insert($data);
         return $insert;
+    }
+
+    public function update($data,$id)
+    {
+        $update = $this->db
+                ->table($this->table)
+                ->where('id', $id)
+                ->update($data);
+        return $update;
+    }
+
+    public function delete($id)
+    {
+        $delete = $this->db
+                ->table($this->table)
+                ->where('id', $id)
+                ->delete();
+        return $delete;
     }
 }
